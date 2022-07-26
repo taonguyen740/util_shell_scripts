@@ -6,7 +6,7 @@ cat <<EOF >/etc/profile.d/scriptlog.sh
 #===================================
 
 LOGDIR=/var/log/script
-LOGFILE=\`whoami\`_\`date '+%Y%m%d%H%M%S'\`.log
+LOGFILE=\`whoami\`.log
 
 P_PROC=\`ps -ef|grep \$PPID|grep bash|awk '{print \$8}'\`
 
