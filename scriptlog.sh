@@ -1,6 +1,3 @@
-mkdir /var/log/script/OLD_20220726
-mv /var/log/script/root_* /var/log/script/OLD_20220726
-mv /var/log/script/centos_* /var/log/script/OLD_20220726
 chmod 644 /etc/profile.d/scriptlog.sh
 cat <<EOF >/etc/profile.d/scriptlog.sh
 #===================================
@@ -35,3 +32,7 @@ cat <<EOF >/etc/logrotate.d/scriptlog
     su root root
 }
 EOF
+mkdir /var/log/script/OLD_20220726
+mv /var/log/script/root_* /var/log/script/OLD_20220726
+mv /var/log/script/centos_* /var/log/script/OLD_20220726
+
