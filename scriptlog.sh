@@ -28,3 +28,4 @@ cat <<EOF >/etc/logrotate.d/scriptlog
     compress
     su root root
 }
+EOF
