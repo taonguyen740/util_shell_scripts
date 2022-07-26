@@ -1,3 +1,4 @@
+chmod 644 /etc/profile.d/scriptlog.sh
 cat <<EOF >/etc/profile.d/scriptlog.sh
 #===================================
 # Script Name   : scriptlog.sh
