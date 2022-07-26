@@ -14,7 +14,6 @@ if [ "`whoami`" != "root" ] && [ "$P_PROC" = -bash ];then
   /bin/script -fq >(awk '{print strftime("%F %T "), $0} {fflush() }'>> ${LOGDIR}/${LOGFILE})
   exit
 fi
-EOF
 
 cat <<EOF >/etc/logrotate.d/scriptlog
 /var/log/script/*.log
