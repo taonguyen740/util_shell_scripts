@@ -6,14 +6,14 @@ cat <<EOF >/etc/profile.d/scriptlog.sh
 #===================================
 
 LOGDIR=/var/log/script
-LOGFILE=\`whoami\`.log
+LOGFILE=\`whoami\`_\`date '+%Y%m%d%H%M%S'\`.log
 
-P_PROC=`ps -ef|grep $PPID|grep bash|awk '{print $8}'`
+P_PROC=\`ps -ef|grep \$PPID|grep bash|awk '{print \$8}'\`
 
-if [ "`whoami`" != "root" ] && [ "$P_PROC" = -bash ];then
-  #/bin/script -faq ${LOGFILE}
+if [ "\`whoami\`" != "root" ] && [ "\$P_PROC" = -bash ];then
+  #/bin/script -faq \${LOGFILE}
   # タイムスタンプを追加
-  /bin/script -fq >(awk '{print strftime("%F %T "), $0} {fflush() }'>> ${LOGDIR}/${LOGFILE})
+  /bin/script -faq >(awk '{print strftime("%Y-%m-%d %H:%M:%S "), \$0} {fflush() }'>> \${LOGDIR}/\${LOGFILE})
   exit
 fi
 EOF
