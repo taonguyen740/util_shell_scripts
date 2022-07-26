@@ -1,3 +1,4 @@
+cat <<EOF >/etc/profile.d/scriptlog.sh
 #===================================
 # Script Name   : scriptlog.sh
 # Description   : This script outputs the operation log for each user to the specified directory.
